@@ -1,0 +1,62 @@
+# Project: IFPB_CRUSH
+# Makefile created by Dev-C++ 5.4.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o pinta_matriz.o play.o scanfstr.o troca_posi.o verifica_pontuacao.o cabecalhos.o cursor_escolha.o cursor_matriz.o embaralha.o ranking.o preenche_matriz.o
+LINKOBJ  = main.o pinta_matriz.o play.o scanfstr.o troca_posi.o verifica_pontuacao.o cabecalhos.o cursor_escolha.o cursor_matriz.o embaralha.o ranking.o preenche_matriz.o
+LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc -lconio -g -g3
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW32/include"
+BIN      = IFPB_CRUSH.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+pinta_matriz.o: pinta_matriz.c
+	$(CC) -c pinta_matriz.c -o pinta_matriz.o $(CFLAGS)
+
+play.o: play.c
+	$(CC) -c play.c -o play.o $(CFLAGS)
+
+scanfstr.o: scanfstr.c
+	$(CC) -c scanfstr.c -o scanfstr.o $(CFLAGS)
+
+troca_posi.o: troca_posi.c
+	$(CC) -c troca_posi.c -o troca_posi.o $(CFLAGS)
+
+verifica_pontuacao.o: verifica_pontuacao.c
+	$(CC) -c verifica_pontuacao.c -o verifica_pontuacao.o $(CFLAGS)
+
+cabecalhos.o: cabecalhos.c
+	$(CC) -c cabecalhos.c -o cabecalhos.o $(CFLAGS)
+
+cursor_escolha.o: cursor_escolha.c
+	$(CC) -c cursor_escolha.c -o cursor_escolha.o $(CFLAGS)
+
+cursor_matriz.o: cursor_matriz.c
+	$(CC) -c cursor_matriz.c -o cursor_matriz.o $(CFLAGS)
+
+embaralha.o: embaralha.c
+	$(CC) -c embaralha.c -o embaralha.o $(CFLAGS)
+
+ranking.o: ranking.c
+	$(CC) -c ranking.c -o ranking.o $(CFLAGS)
+
+preenche_matriz.o: preenche_matriz.c
+	$(CC) -c preenche_matriz.c -o preenche_matriz.o $(CFLAGS)
